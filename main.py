@@ -21,7 +21,9 @@ def main():
     arr = np.array(arr)
     covMatrix = arr.dot(arr.transpose())
     eigen = np.linalg.eig(covMatrix)
-    print(eigen)
+    index = np.where(eigen[0] == np.amax(eigen[0]))
+    eigVec = eigen[1][index]
+    print(eigVec.shape)
     return 0
 
 
